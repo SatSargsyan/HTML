@@ -261,3 +261,35 @@ Other Shape Elements
         style="stroke:#000000; stroke-linecap:round; 
         stroke-width:20"  />
 </svg>
+
+(x1, y1) define the start coordinates(x2, y2) define the end coordinates.
+
+<polyline> defines shapes built from multiple line definitions:
+<svg width="2000" height="500">
+    <polyline style="stroke-linejoin:miter; stroke:black; 
+        stroke-width:12; fill: none;"
+        points="100 100, 150 150, 200 100" />
+</svg>
+
+Points are the polyline's coordinates.
+The code below will draw a black check sign:
+
+
+<ellipse> and <polygon>
+
+Ellipse
+The <ellipse> is similar to the <circle>, with one exception: 
+You can independently change the horizontal and vertical axes of its radius, using the rx and ry attributes.
+<svg height="500" width="1000">
+   <ellipse cx="200" cy="100" rx="150" ry="70" style="fill:green" />
+</svg>
+
+Polygon 
+The <polygon> element is used to create a graphic with at least three sides. The polygon element is unique because it automatically closes off the shape for you.
+<svg width="2000" height="2000">
+<polygon points="100 100, 200 200, 300 0" 
+      style="fill: green; stroke:black;" />
+</svg>
+
+
+
