@@ -23,20 +23,21 @@ Try It Yourself
 
 loop
 This attribute is used to have the audio replay every time it is finished.
-<audio controls autoplay loop>
+`<audio controls autoplay loop>`
 
 
-Currently, there are three supported file formats for the <audio> element: MP3, WAV, and OGG.
+Currently, there are three supported file formats for the `<audio>` element: MP3, WAV, and OGG.
 Videos in HTML
 
 The video element is similar to the audio element. 
 You can specify the video source URL using an attribute in a video element, or using source elements inside the video element:
+```C#
 <video controls>
    <source src="video.mp4" type="video/mp4">
    <source src="video.ogg" type="video/ogg">
    Video is not supported by your browser
 </video>
-
+```
 
 
 Another aspect that the audio and video elements have in common is that the major browsers do not all support the same file types. If the browser does not support the first video type, it will try the next one.
@@ -51,13 +52,12 @@ In this example, the video will replay after it finishes playing:
    <source src="video.ogg" type="video/ogg">
    Video is not supported by your browser
 </video>
-Try It Yourself
 
-Currently, there are three supported video formats for the <video> element: MP4, WebM, and OGG.
+Currently, there are three supported video formats for the `<video>` element: MP4, WebM, and OGG.
 
 Progress Bar
 
-The <progress> element provides the ability to create progress bars on the web.
+The `<progress>` element provides the ability to create progress bars on the web.
 The progress element can be used within headings, paragraphs, or anywhere else in the body.
 
 Progress Element Attributes
@@ -65,10 +65,13 @@ Value: Specifies how much of the task has been completed.
 Max: Specifies how much work the task requires in total.
 
 Example:
-Status: <progress min="0" max="100" value="35">
+Status: 
+```C#
+<progress min="0" max="100" value="35">
 </progress>
+```
 
-Use the <progress> tag in conjunction with JavaScript to dynamically display a task's progress.
+Use the `<progress>` tag in conjunction with JavaScript to dynamically display a task's progress.
 
 HTML5 Web Storage
 
@@ -148,13 +151,15 @@ Making Elements Draggable
 
 The drag and drop feature lets you "grab" an object and drag it to a different location.
 To make an element draggable, just set the draggable attribute to true:
+```C#
 <img draggable="true" />
-
+```
 Any HTML element can be draggable.
 
 The API for HTML5 drag and drop is event-based.
 
 Example:
+```C#
 <!DOCTYPE HTML>
 <html>
    <head>
@@ -186,7 +191,7 @@ function drop(ev) {
 
 </body>
 </html>
-
+```
 What to Drag
 When the element is dragged, the ondragstart attribute calls a function, drag(event), which specifies what data is to be dragged.
 The dataTransfer.setData() method sets the data type and the value of the dragged data:
@@ -248,7 +253,7 @@ To create a circle, add a <circle> tag:
 - stroke adds an outline to the circle
 
 Other Shape Elements
-
+```C#
 <rect> defines a rectangle:
 <svg width="2000" height="2000">
    <rect width="300" height="100" 
@@ -261,36 +266,38 @@ Other Shape Elements
         style="stroke:#000000; stroke-linecap:round; 
         stroke-width:20"  />
 </svg>
-
+```
 (x1, y1) define the start coordinates(x2, y2) define the end coordinates.
-
+```C#
 <polyline> defines shapes built from multiple line definitions:
 <svg width="2000" height="500">
     <polyline style="stroke-linejoin:miter; stroke:black; 
         stroke-width:12; fill: none;"
         points="100 100, 150 150, 200 100" />
 </svg>
-
+```
 Points are the polyline's coordinates.
 The code below will draw a black check sign:
 
-
+```C#
 <ellipse> and <polygon>
-
+```
 Ellipse
-The <ellipse> is similar to the <circle>, with one exception: 
+The `<ellipse>` is similar to the `<circle>`, with one exception: 
 You can independently change the horizontal and vertical axes of its radius, using the rx and ry attributes.
+```C#
 <svg height="500" width="1000">
    <ellipse cx="200" cy="100" rx="150" ry="70" style="fill:green" />
 </svg>
-
+```
 Polygon 
 The <polygon> element is used to create a graphic with at least three sides. The polygon element is unique because it automatically closes off the shape for you.
+```C#
 <svg width="2000" height="2000">
 <polygon points="100 100, 200 200, 300 0" 
       style="fill: green; stroke:black;" />
 </svg>
-
+```
 
 
 26.05.2017
@@ -299,13 +306,14 @@ Shape Animations
 SVG animations can be created using the <animate> element. 
 
 The example below creates a rectangle that will change its position in 3 seconds and will then repeat the animation twice:
+```C#
 <svg width="1000" height="250">
 <rect width="150" height="150" fill="orange">
   <animate attributeName="x" from="0" to="300"
     dur="3s" fill="freeze" repeatCount="2"/> 
 </rect>
 </svg>
-Try It Yourself
+```
 
 attributeName: Specifies which attribute will be affected by the animation
 from: Specifies the starting value of the attribute
@@ -319,7 +327,7 @@ To repeat the animation indefinitely, use the value "indefinite" for the repeatC
 
 Paths
 
-The <path> element is used to define a path.
+The `<path>` element is used to define a path.
 
 The following commands are available for path data:
 M: moveto
@@ -334,10 +342,11 @@ A: elliptical Arc
 Z: closepath
 
 Define a path using the d attribute:
+```C#
 <svg width="500" height="500">
 <path d="M 0 0 L200 200 L200 0 Z" style="stroke:#000;  fill:none;" />
 </svg>
-
+```
 M places our "virtual pen" down at the position 0, 0. It then moves 200px down and to the right, then moves up to the position 200, 0. The Z command closes the shape, which results in a hypotenuse:
 
 All of the above commands can also be expressed with lower case letters. When capital letters are used, it indicates absolute position; lower case indicates relative position.
@@ -345,14 +354,15 @@ All of the above commands can also be expressed with lower case letters. When ca
 The <canvas> Element
 
 The HTML canvas is used to draw graphics that include everything from simple lines to complex graphic objects.
-
+```C#
 The <canvas> element is defined by:
 <canvas id="canvas1" width="200" height="100">
 </canvas>
+```
+The `<canvas>` element is only a container for graphics. You must use a script to actually draw the graphics (usually JavaScript).
 
-The <canvas> element is only a container for graphics. You must use a script to actually draw the graphics (usually JavaScript).
-
-The <canvas> element must have an id attribute so it can be referred to by JavaScript:
+The `<canvas>` element must have an id attribute so it can be referred to by JavaScript:
+```C#
 <html>
    <head></head>
    <body>
@@ -366,7 +376,7 @@ The <canvas> element must have an id attribute so it can be referred to by JavaS
 
    </body>
 </html>
-
+```
 getContext() returns a drawing context on the canvas.
 Basic knowledge of JavaScript is required to understand and use the Canvas.
 
