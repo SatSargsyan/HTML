@@ -2,23 +2,24 @@
 
 Audio on the Web
 
-The <audio> element creates an audio player inside the browser.
+The `<audio>` element creates an audio player inside the browser.
+```C#
 <audio controls>
    <source src="audio.mp3" type="audio/mpeg">
    <source src="audio.ogg" type="audio/ogg">
    Audio element not supported by your browser. 
 </audio>
-
+```
 The text in beetween the audio tags is for not supported browsers
 
-###Attributes of <audio>
+### Attributes of `<audio>`
 
 controls
 Specifies that audio controls should be displayed (such as a play/pause button, etc.)
 
 autoplay
 When this attribute is defined, audio starts playing as soon as it is ready, without asking for the visitor's permission.
-<audio controls autoplay>
+`<audio controls autoplay>`
 Try It Yourself
 
 loop
@@ -151,6 +152,7 @@ Making Elements Draggable
 
 The drag and drop feature lets you "grab" an object and drag it to a different location.
 To make an element draggable, just set the draggable attribute to true:
+
 ```C#
 <img draggable="true" />
 ```
@@ -159,6 +161,7 @@ Any HTML element can be draggable.
 The API for HTML5 drag and drop is event-based.
 
 Example:
+
 ```C#
 <!DOCTYPE HTML>
 <html>
@@ -495,30 +498,33 @@ Form creation is done in HTML5 the same way as it was in HTML4:
 
 New Attributes
 
-HTML5 has introduced a new attribute called placeholder. On <input> and <textarea> elements, this attribute provides a hint to the user of what information can be entered into the field.
+HTML5 has introduced a new attribute called placeholder. On `<input>` and `<textarea>` elements, this attribute provides a hint to the user of what information can be entered into the field.
+```C#
 <form>
    <label for="email">Your e-mail address: </label> 
    <input type="text" name="email" placeholder="email@example.com" /> 
 </form>
-
+```
 
 The autofocus attribute makes the desired input focus when the form loads:
+```C#
 <form>
    <label for="e-mail">Your e-mail address: </label> 
    <input type="text" name="email" autofocus/>
 </form>
-
+```
 
 
 Forms with Required Fields
 
 The "required" attribute is used to make the input elements required.
+```C#
 <form autocomplete="off">
    <label for="e-mail">Your e-mail address: </label>
    <input name="Email" type="text" required />
    <input type="submit" value="Submit"/>
 </form>
-
+```
 The form will not be submitted without filling in the required fields.
 
 The autocomplete attribute specifies whether a form or input field should have autocomplete turned on or off.
@@ -561,21 +567,23 @@ Input types that are not supported by old web browsers, will behave as input typ
 Creating a Search Box
 
 The new search input type can be used to create a search box:
+```C#
 <input id="mysearch" name="searchitem" type="search" />
-
+```
 
 Search Options
 
-The <datalist> tag can be used to define a list of pre-defined options for the search field:
+The `<datalist>` tag can be used to define a list of pre-defined options for the search field:
+```C#
 <input id="car" type="text" list="colors" />
 <datalist id="colors">
    <option value="Red">
    <option value="Green">
    <option value="Yellow">
 </datalist>
+```
 
-
-<option> defines the options in a drop-down list for the user to select. 
+`<option>` defines the options in a drop-down list for the user to select. 
 The ID of the datalist element must match with the list attribute of the input box.
 
 
@@ -583,12 +591,13 @@ The ID of the datalist element must match with the list attribute of the input b
 Creating More Fields
 
 Some other new input types include email, url, and tel:
+```C#
 <input id="email" name="email" type="email" placeholder="example@example.com" />
 <br />
 <input id="url" name="url" type="url" placeholder="example.com" />
 <br />
 <input id="tel" name="tel" type="tel" placeholder="555.555.1211" />
-
+```
 These are especially useful when opening a page on a modern mobile device, which recognizes the input types and opens a corresponding keyboard matching the field's type:
 
 nkar html2
