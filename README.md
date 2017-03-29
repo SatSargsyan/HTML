@@ -225,7 +225,7 @@ At the end, the dragged element is appended into the drop element, using the app
 Basic knowledge of JavaScript is required to understand and use the API.
 
 
-Drawing Shapes
+#### Drawing Shapes
 
 SVG stands for Scalable Vector Graphics, and is used to draw shapes with HTML-style markup.
 
@@ -236,18 +236,21 @@ SVG is not pixel-based, so it can be magnified infinitely with no loss of qualit
 Inserting SVG Images
 
 An SVG image can be added to HTML code with just a basic image tag that includes a source attribute pointing to the image:
+```C#
 <img src="image.svg" alt="" height="300" />
-
-Drawing a Circle
+```
+#### Drawing a Circle
 
 To draw shapes with SVG, you first need to create an SVG element tag with two attributes: width and height.
+```C#
 <svg width="1000" height="1000"></svg>
-
+```
 To create a circle, add a <circle> tag:
+```C#
 <svg width="2000" height="2000">
    <circle cx="80" cy="80" r="50" fill="green" />
 </svg>
-
+```
 
 - cx pushes the center of the circle further to the right of the screen
 - cy pushes the center of the circle further down from the top of the screen
@@ -255,7 +258,7 @@ To create a circle, add a <circle> tag:
 - fill determines the color of our circle
 - stroke adds an outline to the circle
 
-Other Shape Elements
+#### Other Shape Elements
 ```C#
 <rect> defines a rectangle:
 <svg width="2000" height="2000">
